@@ -18,4 +18,11 @@ public class ItemPedido {
         return produto.getTempoPreparo() * quantidade;
     }
 
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
 }
