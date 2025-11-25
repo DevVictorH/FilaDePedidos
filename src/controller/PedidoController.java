@@ -23,7 +23,6 @@ public class PedidoController {
                               model.enums.Prioridade prioridade, String observacoes) {
         Pedido pedido = new Pedido(itens, canal, prioridade, observacoes);
         
-        // Registrar observadores
         pedido.adicionarObservador(new PainelCozinha());
         pedido.adicionarObservador(new PainelCaixa());
         pedido.adicionarObservador(new PainelCliente());
@@ -32,7 +31,6 @@ public class PedidoController {
     }
 
     public void adicionarPedidoNaFila(Pedido pedido) {
-        // Registrar observadores se ainda não estiverem registrados
         if (pedido.getObservadores().isEmpty()) {
             pedido.adicionarObservador(new PainelCozinha());
             pedido.adicionarObservador(new PainelCaixa());
